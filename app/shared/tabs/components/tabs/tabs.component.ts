@@ -66,7 +66,7 @@ export class TabsComponent implements OnInit, AfterViewInit, AfterContentInit, O
         const tabComponentsRemove = tabsComponentsOldArr.filter(([tabComponent]) => !tabsComponentsArr.includes(tabComponent));
 
         tabComponentsRemove.forEach(([tabComponent, meta]) => {
-            this.tabComponentsOldMap.delete((tabComponent));
+            this.tabComponentsOldMap.delete(tabComponent);
             meta.titleComponent.destroy();
             if (this.tabComponentsCurrent && this.tabComponentsCurrent.tab === tabComponent) {
                 this.tabComponentsCurrent.tabContentRef.destroy();
